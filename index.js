@@ -18,4 +18,11 @@ const bot = new Telegraf('509762747:AAE_Qd4hiJ97uTdqmCWxP7iauXtTzh5xtA4')
 const Telegram = require('telegraf/telegram')
 const telegram = new Telegram('509762747:AAE_Qd4hiJ97uTdqmCWxP7iauXtTzh5xtA4')
 //channel id -> https://github.com/GabrielRF/telegram-id#web-channel-id
-telegram.sendMessage(-1001231605489, 'testing...').then((resp) => {console.log(resp)})
+telegram.sendMessage(-1001231605489, '*bold text*\n'+
+'_italic text_\n'+
+'[inline URL](http://www.example.com/)\n'+
+'[inline mention of a user](tg://user?id=123456789)\n'+
+'`inline fixed-width code`\n'+
+'```block_language'+
+'pre-formatted fixed-width code block'+
+'```\n', {parse_mode: 'Markdown'}).then((resp) => {console.log(resp)})
